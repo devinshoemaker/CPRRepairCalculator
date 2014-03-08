@@ -43,6 +43,8 @@ public class MainActivity extends ActionBarActivity {
         double phoneValue;
         double phoneValueMarkup;
         double repairCost;
+
+        repairCost = (partCost + shippingCost + labor + phoneValueMarkup);
     }
 
 }
