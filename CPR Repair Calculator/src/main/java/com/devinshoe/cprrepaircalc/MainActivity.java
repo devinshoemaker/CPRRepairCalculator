@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.math.BigDecimal;
+import java.text.NumberFormat;
+import java.util.Locale;
+
 
 public class MainActivity extends ActionBarActivity {
 
@@ -45,8 +49,13 @@ public class MainActivity extends ActionBarActivity {
         double phoneValue;
         double phoneValueMarkup;
         double repairCost;
+        BigDecimal repairCostInDollars;
+        String repairCostInString;
         EditText etPartsPrice = (EditText) findViewById(R.id.etPartsPrice);
         EditText etPhoneValue = (EditText) findViewById(R.id.etPhoneValue);
+        TextView tvRepairCost = (TextView) findViewById(R.id.tvRepairCost);
+        NumberFormat nf = NumberFormat.getCurrencyInstance(Locale.US);
+        nf.setMinimumFractionDigits(2);
 
         partCost = Double.parseDouble(etPartsPrice.getText().toString());
         phoneValue = Double.parseDouble(etPhoneValue.getText().toString());
@@ -54,6 +63,10 @@ public class MainActivity extends ActionBarActivity {
         phoneValueMarkup = calculatePhoneValueMarkup(phoneValue);
 
         repairCost = (partCost + shippingCost + labor + phoneValueMarkup);
+        repairCostInString = String.valueOf(repairCost);
+        repairCostInDollars = new BigDecimal(nf.format(repairCostInString).toString());
+
+        tvRepairCost.setText(String.valueOf(repairCostInDollars));
     }
 
     private double calculatePhoneValueMarkup(double phoneValue) {
