@@ -63,10 +63,8 @@ public class MainActivity extends ActionBarActivity {
         phoneValueMarkup = calculatePhoneValueMarkup(phoneValue);
 
         repairCost = (partCost + shippingCost + labor + phoneValueMarkup);
-        repairCostInString = String.valueOf(repairCost);
-        repairCostInDollars = new BigDecimal(nf.format(repairCostInString).toString());
 
-        tvRepairCost.setText(String.valueOf(repairCostInDollars));
+        tvRepairCost.setText(String.valueOf(nf.format(repairCost)));
     }
 
     private double calculatePhoneValueMarkup(double phoneValue) {
