@@ -38,7 +38,7 @@ public class MainActivity extends ActionBarActivity {
 
     public void ocCalculate(View v) {
         final double shippingCost = 25;
-        final double labor = 25;
+        final double labor = 35;
         double partCost;
         double phoneValue;
         double phoneValueMarkup;
