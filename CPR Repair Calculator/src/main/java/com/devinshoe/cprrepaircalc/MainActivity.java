@@ -51,7 +51,31 @@ public class MainActivity extends ActionBarActivity {
         partCost = Double.parseDouble(etPartsPrice.getText().toString());
         phoneValue = Double.parseDouble(etPhoneValue.getText().toString());
 
+        phoneValueMarkup = calculatePhoneValueMarkup(phoneValue);
+
         repairCost = (partCost + shippingCost + labor + phoneValueMarkup);
+    }
+
+    private double calculatePhoneValueMarkup(double phoneValue) {
+        double phoneValueMarkup = 0;
+
+        if (phoneValue <= 100) {
+            phoneValueMarkup = 10;
+        }
+        else if (phoneValue > 100 && phoneValue <= 200) {
+            phoneValueMarkup = 20;
+        }
+        else if (phoneValue > 200 && phoneValue <= 300) {
+            phoneValueMarkup = 30;
+        }
+        else if (phoneValue > 300 && phoneValue <= 400) {
+            phoneValueMarkup = 40;
+        }
+        else if (phoneValue > 400) {
+            phoneValueMarkup = 50;
+        }
+
+        return phoneValueMarkup;
     }
 
 }
