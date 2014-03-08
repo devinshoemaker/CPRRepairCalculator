@@ -1,0 +1,23 @@
+# Use Glob syntax
+syntax: glob
+
+idea_out/
+build.properties
+bin/
+gen/
+out/
+*.iml
+.idea/
+.classpath
+.project
+local.properties
+build-log.xml
+build.log
+build/
+taskArtifacts/
+.gradle/
+signing.properties
+caches/
+daemon/
+gradle/caches/
+gradle/daemon/
