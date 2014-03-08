@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -43,6 +45,8 @@ public class MainActivity extends ActionBarActivity {
         double phoneValue;
         double phoneValueMarkup;
         double repairCost;
+        EditText etPartsPrice = (EditText) findViewById(R.id.etPartsPrice);
+        EditText etPhoneValue = (EditText) findViewById(R.id.etPhoneValue);
 
         repairCost = (partCost + shippingCost + labor + phoneValueMarkup);
     }
