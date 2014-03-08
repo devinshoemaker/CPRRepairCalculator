@@ -48,6 +48,8 @@ public class MainActivity extends ActionBarActivity {
         EditText etPartsPrice = (EditText) findViewById(R.id.etPartsPrice);
         EditText etPhoneValue = (EditText) findViewById(R.id.etPhoneValue);
 
+        partCost = Double.parseDouble(etPartsPrice.getText().toString());
+
         repairCost = (partCost + shippingCost + labor + phoneValueMarkup);
     }
 
